@@ -1,5 +1,12 @@
 # depslib dependency file v1.0
-1581408255 source:c:\users\kerem\timelib\main.c
+1582625382 source:c:\users\kerem\timelib\main.c
 	<stdio.h>
 	<stdlib.h>
+
+1582625054 source:c:\users\kerem\timelib\timelib.c
+	<stdio.h>
+	<stdlib.h>
+	"timelib.h"
+
+1582624879 c:\users\kerem\timelib\timelib.h
 
