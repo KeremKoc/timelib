@@ -7,15 +7,17 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "timelib.h"
 
 int main()
 {
-    int day = 0;
-    int month = 0;
-    int year = 0;
+    struct date inputDate;
+    inputDate.day = 0;
+    inputDate.month = 0;
+    inputDate.year = 0;
 
-    input_date(&day,&month,&year);
+    input_date(&inputDate);
 
-    printf("Tag des Jahres: %i\n", day_of_the_year(day, month, year));
+    printf("Tag des Jahres: %i\n", day_of_the_year(inputDate.day, inputDate.month, inputDate.year));
     return 0;
 }

@@ -43,6 +43,7 @@ int get_days_for_month(int month, int year)
     month = month - 1;
     int days_in_Month[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
     int days = 0;
+
     if(month > 12 && month < 0 )
     {
         return -1;
@@ -104,17 +105,29 @@ int day_of_the_year(int day, int month, int year)
     return 0;
 }
 
-void input_date(int *day, int *month, int *year)
+/** \brief Die Funktion liest ein struct date ein, für Tag, Monat und Jahr.
+ *  Wenn das angegebene Datum ungültig ist, wird erneut eingelesen,
+ *  solange bis ein gültiges Datum eingegeben wurde.
+ *
+ * \param inputDate.day für Tag
+ * \param inputDate.month für Monat
+ * \param inputDate.year für Jahr
+ *
+ */
+
+void input_date(struct date *inputDate)
 {
-    do{
-    printf("Bitte geben sie einen Tag ein: ");
-    scanf("%i",day);
-    fflush(stdin);
-    printf("Bitte geben sie einen Monat ein: ");
-    scanf("%i",month);
-    fflush(stdin);
-    printf("Bitte geben sie einen Jahr ein: ");
-    scanf("%i",year);
-    fflush(stdin);
-    } while(!exists_date(*day,*month,*year));
+    do
+    {
+        printf("Bitte geben sie einen Tag ein: ");
+        scanf("%i",&(*inputDate).day);
+        fflush(stdin);
+        printf("Bitte geben sie einen Monat ein: ");
+        scanf("%i",&(*inputDate).month);
+        fflush(stdin);
+        printf("Bitte geben sie einen Jahr ein: ");
+        scanf("%i",&(*inputDate).year);
+        fflush(stdin);
+    }
+    while(!exists_date((*inputDate).day,(*inputDate).month,(*inputDate).year));
 }
